@@ -1,2 +1,0 @@
-24/05/2025  created repo
-25/05/2025  setting up files, created project, installed raylib
