@@ -1,6 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DynamicArray.h"
 #include "raylib.h"
+#include "Position.h"
+#include "Cell.h"
+#include "Enemy.h"
+#include "Tower.h"
 #include <string>
 #include <cmath>
 
@@ -9,110 +13,6 @@ const int SCREEN_WIDTH = 1024;
 const int SCREEN_HEIGHT = 768;
 const int CELL_SIZE = 64;
 const int UI_HEIGHT = 150;
-
-// === Global Variables ===
-
-
-// === Position Struct ===
-struct Position
-{
-    float x;
-    float y;
-
-    bool operator==(const Position &other) const
-    {
-        return x == other.x && y == other.y;
-    }
-};
-
-// === Cell Class ===
-class Cell
-{
-private:
-    Position pos;
-    bool hasTower;
-    bool hasEnemy;
-    char type; // '.' for empty, 'x' for path, '#' for blocked
-
-public:
-    Cell() : pos{-1, -1}, hasTower(false), hasEnemy(false), type('.') {}
-    Cell(float x, float y, char t) : pos{x, y}, hasTower(false), hasEnemy(false), type(t) {}
-
-    bool isEmpty() const { return !hasTower && !hasEnemy && type == '.'; }
-    bool isPath() const { return type == 'x'; }
-    void placeTower() { hasTower = true; }
-    void removeTower() { hasTower = false; }
-    void placeEnemy() { hasEnemy = true; }
-    void removeEnemy() { hasEnemy = false; }
-    Position getPosition() const { return pos; }
-    char getType() const { return type; }
-};
-
-// === Enemy Base Class ===
-class Enemy
-{
-protected:
-    char symbol;
-    int health;
-    int maxHealth;
-    float speed;
-    int worth;
-    Position pos;
-    int pathIndex;
-    DynamicArray<Position> path;
-    float progress;
-
-public:
-    Enemy(char sym, int hp, int spd, int wrth, const DynamicArray<Position> &p)
-        : symbol(sym), health(hp), maxHealth(hp), speed(spd), worth(wrth), path(p), pathIndex(0), progress(0.0f)
-    {
-        pos = path[0];
-    }
-
-    virtual ~Enemy() {}
-
-    virtual void update(float deltaTime)
-    {
-        if (pathIndex + 1 >= path.getSize())
-            return;
-
-        Position target = path[pathIndex + 1];
-        float dx = target.x - pos.x;
-        float dy = target.y - pos.y;
-
-        progress += speed * deltaTime;
-        if (progress >= 1.0f)
-        {
-            progress = 0.0f;
-            pos = target;
-            pathIndex++;
-        }
-        else
-        {
-            pos.x = path[pathIndex].x + dx * progress;
-            pos.y = path[pathIndex].y + dy * progress;
-        }
-    }
-
-    int getHealth() const { return health; }
-    int getMaxHealth() const { return maxHealth; }
-    char getSymbol() const { return symbol; }
-    Position getPosition() const { return pos; }
-    bool isAlive() const { return health > 0; }
-    int getWorth() const { return worth; }
-
-    void takeDamage(int dmg)
-    {
-        health -= dmg;
-        if (health < 0)
-            health = 0;
-    }
-
-    bool reachedEnd() const
-    {
-        return pathIndex >= path.getSize() - 1;
-    }
-};
 
 // === Enemy Types ===
 class Clicker : public Enemy
@@ -125,60 +25,6 @@ class Bloater : public Enemy
 {
 public:
     Bloater(const DynamicArray<Position> &p) : Enemy('B', 100, 1, 30, p) {}
-};
-
-// === Tower Base Class ===
-class Tower
-{
-protected:
-    char symbol;
-    int damage;
-    int range;
-    Position pos;
-    int cost;
-    float cooldown;
-    float attackTimer;
-
-public:
-    Tower(char sym, int dmg, int rng, Position p, int cst, float cd)
-        : symbol(sym), damage(dmg), range(rng), pos(p), cost(cst), cooldown(cd), attackTimer(0.0f)
-    {
-    }
-
-    virtual ~Tower() {}
-
-    virtual void update(float deltaTime, DynamicArray<Enemy *> &enemies)
-    {
-        attackTimer += deltaTime;
-        if (attackTimer >= cooldown)
-        {
-            attackTimer = 0.0f;
-            attack(enemies);
-        }
-    }
-
-    virtual void attack(DynamicArray<Enemy *> &enemies)
-    {
-        for (int i = 0; i < enemies.getSize(); ++i)
-        {
-            Enemy *e = enemies[i];
-            if (e->isAlive())
-            {
-                Position ep = e->getPosition();
-                float distance = sqrt(pow(ep.x - pos.x, 2) + pow(ep.y - pos.y, 2));
-                if (distance <= range)
-                {
-                    e->takeDamage(damage);
-                    break; // Attack one enemy per round
-                }
-            }
-        }
-    }
-
-    Position getPosition() const { return pos; }
-    char getSymbol() const { return symbol; }
-    int getCost() const { return cost; }
-    int getRange() const { return range; }
 };
 
 // === Tower Types ===
@@ -357,6 +203,9 @@ private:
 public:
 
 };
+
+
+
 
 int main()
 {

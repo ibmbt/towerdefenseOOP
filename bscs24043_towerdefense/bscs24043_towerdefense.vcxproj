@@ -130,7 +130,11 @@
     <ClCompile Include="bscs24043_towerdefense.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cell.h" />
     <ClInclude Include="dynamicArray.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="Tower.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
