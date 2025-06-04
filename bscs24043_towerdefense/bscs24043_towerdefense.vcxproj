@@ -133,6 +133,9 @@
     <ClInclude Include="Cell.h" />
     <ClInclude Include="dynamicArray.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Tower.h" />
   </ItemGroup>

@@ -3,8 +3,7 @@
 #include "Position.h"
 
 
-class Cell
-{
+class Cell {
 private:
     Position pos;
     bool hasTower;
