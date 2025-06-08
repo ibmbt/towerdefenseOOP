@@ -2,19 +2,29 @@
 #define POSTITION_H
 
 
-struct Position
-{
+struct Position {
     float x;
     float y;
 
-    bool operator==(const Position& other) const;
+    bool operator==(const Position& other) const {
+        return x == other.x && y == other.y;
+    }
+
+    Position() : x(-1), y(-1) {}
+
+    Position(float _x, float _y) : x(_x), y(_y) {}
+
+    Position(const Position& other) : x(other.x), y(other.y) {}
+
+    Position& operator=(const Position& other) {
+        if (this != &other) {
+            x = other.x;
+            y = other.y;
+        }
+        return *this;
+    }
+
 
 };
-
-
-bool Position::operator==(const Position& other) const
-{
-    return x == other.x && y == other.y;
-}
 
 #endif

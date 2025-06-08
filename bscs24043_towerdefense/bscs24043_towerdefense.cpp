@@ -34,57 +34,89 @@ public:
 
 // === Tower Types ===
 class JoelTower : public Tower {
+
+    bool molotovUnlocked;
+    bool rifleUnlocked;
+
 public:
-    JoelTower(Position p) : Tower('J', 20, 2, p, 50, 1.0f) {}
+    JoelTower(Position p) : Tower('J', 25, 2, p, 50, 1.0f),
+        molotovUnlocked(false), rifleUnlocked(false) {
+        maxLevel = 2;
+        upgrade1Name = "Molotov Upgrade";
+        upgrade2Name = "Rifle Upgrade";
+    }
+
+    void upgradePath1() override {
+        if (level >= maxLevel) return;
+
+        damage += 15;
+        range += 0.5f;
+        cooldown *= 1.2f;
+        molotovUnlocked = true;
+        level++;
+    }
+
+    void upgradePath2() override { 
+        if (level >= maxLevel) return;
+
+        damage += 10;
+        range += 1.5f;
+        cooldown *= 0.8f;
+        rifleUnlocked = true;
+        level++;
+    }
 
     void displayInfo(Vector2 mousePos) const override {
         if (showRange) {
-            float panelWidth = 180;
-            float panelHeight = 80;
-            float panelX = min(mousePos.x + 15, SCREEN_WIDTH - panelWidth - 5);
-            float panelY = min(mousePos.y - panelHeight - 10, SCREEN_HEIGHT - panelHeight - 5);
-
-            DrawRectangleRounded(
-                Rectangle{ panelX, panelY, panelWidth, panelHeight },
-                0.1f, 8, Color{ 40, 40, 60, 230 }
-            );
-            DrawRectangleRoundedLines(
-                Rectangle{ panelX, panelY, panelWidth, panelHeight },
-                0.1f, 8, PURPLE
-            );
-
-            DrawText(TextFormat("%s Tower", "Joel"),
-                panelX + 10, panelY + 10, 20, WHITE);
-            DrawText(TextFormat("Damage: %d", damage), panelX + 10, panelY + 35, 18, LIGHTGRAY);
-            DrawText(TextFormat("Range: %d", range), panelX + 10, panelY + 55, 18, LIGHTGRAY);
+            drawBaseInfoPanel(mousePos, "Joel", molotovUnlocked, rifleUnlocked);
         }
     }
 };
 
 class EllieTower : public Tower {
+
+    bool bowUnlocked;
+    bool stealthUnlocked;
+
 public:
-    EllieTower(Position p) : Tower('E', 7, 3, p, 30, 0.5f) {}
+
+    EllieTower(Position p) : Tower('E', 10, 3, p, 30, 0.5f),
+        bowUnlocked(false), stealthUnlocked(false) {
+        maxLevel = 2;
+        upgrade1Name = "Bow Upgrade";
+        upgrade2Name = "Stealth Upgrade";
+    }
+
+    void upgradePath1() override {
+        if (level >= maxLevel) return;
+
+        damage += 8;
+        range += 1.0f;
+        bowUnlocked = true;
+        level++;
+    }
+
+    void upgradePath2() override {  
+        if (level >= maxLevel) return;
+
+        cooldown *= 0.7f;
+        stealthUnlocked = true;
+        level++;
+    }
+
+    void attack(DynamicArray<Enemy*>& enemies) override {
+        if (stealthUnlocked) {
+            
+            if (rand() % 100 < 30) {
+                Tower::attack(enemies);
+            }
+        }
+        Tower::attack(enemies);
+    }
 
     void displayInfo(Vector2 mousePos) const override {
         if (showRange) {
-            float panelWidth = 180;
-            float panelHeight = 80;
-            float panelX = min(mousePos.x + 15, SCREEN_WIDTH - panelWidth - 5);
-            float panelY = min(mousePos.y - panelHeight - 10, SCREEN_HEIGHT - panelHeight - 5);
-
-            DrawRectangleRounded(
-                Rectangle{ panelX, panelY, panelWidth, panelHeight },
-                0.1f, 8, Color{ 40, 40, 60, 230 }
-            );
-            DrawRectangleRoundedLines(
-                Rectangle{ panelX, panelY, panelWidth, panelHeight },
-                0.1f, 8, PURPLE
-            );
-
-            DrawText(TextFormat("%s Tower", "Ellie"),
-                panelX + 10, panelY + 10, 20, WHITE);
-            DrawText(TextFormat("Damage: %d", damage), panelX + 10, panelY + 35, 18, LIGHTGRAY);
-            DrawText(TextFormat("Range: %d", range), panelX + 10, panelY + 55, 18, LIGHTGRAY);
+            drawBaseInfoPanel(mousePos, "Ellie", bowUnlocked, stealthUnlocked);
         }
     }
 

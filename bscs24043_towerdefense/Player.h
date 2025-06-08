@@ -24,9 +24,18 @@ public:
     void addTower(Tower* tower) { towers.push(tower); }
     void loseLife() { lives--; }
 
+    void setPlayer(int _lives, int _coins) {
+        lives = _lives;
+        coins = _coins;
+    }
+
     int getLives() const { return lives; }
     int getCoins() const { return coins; }
     const DynamicArray<Tower*>& getTowers() const { return towers; }
+
+    void resetPlayer() {
+        towers.clear();
+    }
 };
 
 #endif
