@@ -1,12 +1,14 @@
 #ifndef MAP_H
 #define MAP_H
+#include <fstream>
+#include <string>
 #include "dynamicArray.h"
+#include "Globals.h"
 #include "Position.h"
 #include "Cell.h"
 #include "raylib.h"
+using namespace std;
 
-const int CELL_SIZE = 64;
-const int UI_HEIGHT = 150;
 
 class Map {
 private:
@@ -44,6 +46,7 @@ private:
             Position current = path[path.getSize() - 1];
             bool foundNext = false;
 
+            // Check adjacent cells (up, down, left, right)
             int dx[] = { 0, 0, -1, 1 };
             int dy[] = { -1, 1, 0, 0 };
 
@@ -75,33 +78,10 @@ private:
     }
 
 public:
-    Map(const string& filename) {
-
-        grassTex = LoadTexture("resources/grass.png");
-        pathTex = LoadTexture("resources/path.png");
-        rockTex = LoadTexture("resources/rock.png");
-
-        FILE* file = fopen(filename.c_str(), "r");
-        if (!file) {
-            TraceLog(LOG_ERROR, "Failed to load map file");
-            return;
-        }
-
-        char line[256];
-        while (fgets(line, sizeof(line), file)) {
-            DynamicArray<Cell> row;
-            int x = 0;
-            for (char* c = line; *c != '\0' && *c != '\n'; c++) {
-                row.push(Cell(x, height, *c));
-                x++;
-            }
-            grid.push(row);
-            height++;
-            if (width == 0) width = x;
-        }
-        fclose(file);
-
-        findPath();
+    Map() {
+        grassTex = LoadTexture("sprites/grass.png");
+        pathTex = LoadTexture("sprites/path.png");
+        rockTex = LoadTexture("sprites/rock.png");
     }
 
     ~Map() {
@@ -110,15 +90,59 @@ public:
         UnloadTexture(rockTex);
     }
 
+    void load(const string& filename) {
+
+        grid.clear();
+        path.clear();
+        width = height = 0;
+
+
+        ifstream file(filename);
+
+
+        /*
+        if (!file.is_open()) {
+
+            return;
+        }
+        */
+
+        string line;
+        while (getline(file, line)) {
+            DynamicArray<Cell> row;
+            int x = 0;
+            for (char c : line) {
+                row.push(Cell(x, height, c));
+                x++;
+            }
+            grid.push(row);
+            height++;
+            if (width == 0) width = x;
+        }
+
+        file.close();
+        findPath();
+    }
+
+    void reset() {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                grid[y][x].removeTower();
+                grid[y][x].removeEnemy();
+            }
+        }
+    }
+
+
     const DynamicArray<Position>& getPath() const { return path; }
     Cell& getCell(int x, int y) { return grid[y][x]; }
     int getWidth() const { return width; }
     int getHeight() const { return height; }
 
     void draw() {
+
         for (int y = 0; y < height; y++) {
             for (int x = 0; x < width; x++) {
-
                 Texture2D* currentTex = nullptr;
                 if (grid[y][x].isPath()) {
                     currentTex = &pathTex;

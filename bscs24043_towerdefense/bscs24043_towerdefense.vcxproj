@@ -128,14 +128,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bscs24043_towerdefense.cpp" />
+    <ClCompile Include="Globals.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bloater.h" />
     <ClInclude Include="Cell.h" />
+    <ClInclude Include="Clicker.h" />
     <ClInclude Include="dynamicArray.h" />
+    <ClInclude Include="EllieTower.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="JoelTower.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="Player.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Tower.h" />
   </ItemGroup>

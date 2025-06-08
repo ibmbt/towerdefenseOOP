@@ -1,5 +1,6 @@
 #ifndef POSTITION_H
 #define POSTITION_H
+using namespace std;
 
 
 struct Position {

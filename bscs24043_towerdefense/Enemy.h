@@ -2,6 +2,8 @@
 #define ENEMY_H
 #include "Position.h"
 #include "dynamicArray.h"
+using namespace std;
+
 
 class Enemy {
 protected:

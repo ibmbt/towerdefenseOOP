@@ -18,6 +18,9 @@
     <ClCompile Include="bscs24043_towerdefense.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dynamicArray.h">
@@ -38,10 +41,22 @@
     <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game.h">
+    <ClInclude Include="Globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Clicker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bloater.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="JoelTower.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EllieTower.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

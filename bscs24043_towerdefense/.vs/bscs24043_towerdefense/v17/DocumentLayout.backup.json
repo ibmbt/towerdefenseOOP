@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\bscs24043_towerdefense.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:bscs24043_towerdefense.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Globals.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Tower.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Tower.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Map.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Position.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Cell.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Cell.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Cell.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:Cell.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\bscs24043_towerdefense.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D2F43223-B89C-4F52-AAE4-73CE58485D70}|bscs24043_towerdefense.vcxproj|solutionrelative:bscs24043_towerdefense.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,69 +38,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Globals.h",
+              "DocumentMoniker": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Globals.h",
+              "RelativeDocumentMoniker": "Globals.h",
+              "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Globals.h",
+              "RelativeToolTip": "Globals.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-08T20:14:35.191Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Game.h",
               "DocumentMoniker": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Game.h",
               "RelativeDocumentMoniker": "Game.h",
-              "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Game.h",
-              "RelativeToolTip": "Game.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Game.h*",
+              "RelativeToolTip": "Game.h*",
+              "ViewState": "AgIAACkBAAAAAAAAAAAAAD4BAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-04T18:06:34.098Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Player.h",
-              "DocumentMoniker": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Player.h",
-              "RelativeDocumentMoniker": "Player.h",
-              "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Player.h",
-              "RelativeToolTip": "Player.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-04T18:03:04.352Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Map.h",
               "RelativeDocumentMoniker": "Map.h",
-              "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Map.h",
-              "RelativeToolTip": "Map.h",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAEwAAAAHAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Map.h*",
+              "RelativeToolTip": "Map.h*",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAAE8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-04T18:00:18.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Tower.h",
               "DocumentMoniker": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Tower.h",
               "RelativeDocumentMoniker": "Tower.h",
               "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Tower.h",
               "RelativeToolTip": "Tower.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-02T19:26:18.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Enemy.h",
               "DocumentMoniker": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Enemy.h",
               "RelativeDocumentMoniker": "Enemy.h",
               "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Enemy.h",
               "RelativeToolTip": "Enemy.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-02T19:23:14.868Z",
               "EditorCaption": ""
@@ -117,33 +113,20 @@
               "RelativeDocumentMoniker": "Cell.h",
               "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Cell.h",
               "RelativeToolTip": "Cell.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-06-02T19:19:25.593Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Position.h",
-              "DocumentMoniker": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Position.h",
-              "RelativeDocumentMoniker": "Position.h",
-              "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\Position.h",
-              "RelativeToolTip": "Position.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-02T19:16:59.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "bscs24043_towerdefense.cpp",
               "DocumentMoniker": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\bscs24043_towerdefense.cpp",
               "RelativeDocumentMoniker": "bscs24043_towerdefense.cpp",
               "ToolTip": "C:\\Users\\ibrah\\OneDrive\\Desktop\\Kehale\\ITUniversity\\sem2\\objectoriented\\towerdefenseOOP\\bscs24043_towerdefense\\bscs24043_towerdefense.cpp",
               "RelativeToolTip": "bscs24043_towerdefense.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-25T15:24:11.917Z",
               "EditorCaption": ""

@@ -1,8 +1,48 @@
 #ifndef TOWER_H
 #define TOWER_H
+#include "Globals.h"
 #include "Position.h"
 #include "dynamicArray.h"
 #include "Enemy.h"
+using namespace std;
+
+class Tower;
+
+class Player {
+private:
+    DynamicArray<Tower*> towers;
+    int lives;
+    int coins;
+
+public:
+    Player(int initialLives, int initialCoins) : lives(initialLives), coins(initialCoins) {}
+
+    ~Player() {
+        for (int i = 0; i < towers.getSize(); i++) {
+            delete towers[i];
+        }
+    }
+
+    bool canAfford(int cost) const { return coins >= cost; }
+    void deductCoins(int amount) { coins -= amount; }
+    void addCoins(int amount) { coins += amount; }
+    void addTower(Tower* tower) { towers.push(tower); }
+    void loseLife() { lives--; }
+
+    void setPlayer(int _lives, int _coins) {
+        lives = _lives;
+        coins = _coins;
+    }
+
+    int getLives() const { return lives; }
+    int getCoins() const { return coins; }
+    const DynamicArray<Tower*>& getTowers() const { return towers; }
+
+    void resetPlayer() {
+        towers.clear();
+    }
+};
+
 
 
 class Tower {
@@ -107,8 +147,8 @@ public:
     virtual void upgradePath1() = 0;
     virtual void upgradePath2() = 0;
 
-    bool canUpgrade(int path, Player& player) {
-        return ((level < maxLevel) && (player.canAfford(getUpgradeCost(path))));
+    bool canUpgrade(int path, Player* player) const{
+        return ((level < maxLevel) && (player->canAfford(getUpgradeCost(path))));
     }
 
 

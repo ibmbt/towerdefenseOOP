@@ -1,6 +1,7 @@
 #ifndef CELL_H
 #define CELL_H
 #include "Position.h"
+using namespace std;
 
 
 class Cell {
