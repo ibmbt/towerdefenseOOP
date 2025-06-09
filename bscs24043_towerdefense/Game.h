@@ -8,6 +8,7 @@
 #include "EllieTower.h"
 #include "Clicker.h"
 #include "Bloater.h"
+#include "SoundManager.h"
 using namespace std;
 
 
@@ -38,8 +39,10 @@ private:
     Texture2D bloaterTexture;
     Texture2D joelTowerTexture;
     Texture2D ellieTowerTexture;
+    Texture2D menuBackground;
 
 
+    SoundManager audio;
 
 
 
@@ -107,6 +110,9 @@ private:
         for (int i = 0; i < enemies.getSize(); i++) {
             enemies[i]->update(deltaTime);
             if (enemies[i]->reachedEnd()) {
+                if (enemies[i]->getMaxHealth() > 199) {
+                    player.loseLife();
+                }
                 player.loseLife();
                 delete enemies[i];
                 enemies.remove(i);
@@ -120,6 +126,7 @@ private:
         // Remove dead enemies
         for (int i = 0; i < enemies.getSize(); ) {
             if (!enemies[i]->isAlive()) {
+                audio.playEnemyDeath();
                 player.addCoins(enemies[i]->getWorth());
                 delete enemies[i];
                 enemies.remove(i);
@@ -317,6 +324,7 @@ public:
         bloaterTexture = LoadTexture("sprites/bloater.png");
         joelTowerTexture = LoadTexture("sprites/joel.png");
         ellieTowerTexture = LoadTexture("sprites/ellie.png");
+        menuBackground = LoadTexture("sprites/menu2.png");
 
 
     }
@@ -327,6 +335,8 @@ public:
         UnloadTexture(bloaterTexture);
         UnloadTexture(joelTowerTexture);
         UnloadTexture(ellieTowerTexture);
+        UnloadTexture(menuBackground);
+
 
         for (int i = 0; i < enemies.getSize(); i++) {
             delete enemies[i];
@@ -342,22 +352,36 @@ public:
         BeginDrawing();
         ClearBackground(DARKGRAY);
 
+        DrawTexturePro(
+            menuBackground,
+            Rectangle{ 0, 0, (float)menuBackground.width, (float)menuBackground.height },
+            Rectangle{ 0, 0, (float)SCREEN_WIDTH, (float)SCREEN_HEIGHT },
+            Vector2{ 0, 0 },
+            0.0f,
+            WHITE
+        );
+
+        // Title
         DrawText("THE LAST OF US TOWER DEFENSE",
             SCREEN_WIDTH / 2 - MeasureText("THE LAST OF US TOWER DEFENSE", 40) / 2,
             100, 40, WHITE);
 
+        // Level buttons
         Rectangle level1Btn = { SCREEN_WIDTH / 2 - 100, 200, 200, 50 };
         Rectangle level2Btn = { SCREEN_WIDTH / 2 - 100, 280, 200, 50 };
         Rectangle level3Btn = { SCREEN_WIDTH / 2 - 100, 360, 200, 50 };
 
-        DrawRectangleRec(level1Btn, selectedLevel == 1 ? GREEN : GRAY);
-        DrawRectangleRec(level2Btn, selectedLevel == 2 ? GREEN : GRAY);
-        DrawRectangleRec(level3Btn, selectedLevel == 3 ? GREEN : GRAY);
+        // Draw buttons
+        DrawRectangleRec(level1Btn, selectedLevel == 1 ? RED : GRAY);
+        DrawRectangleRec(level2Btn, selectedLevel == 2 ? RED : GRAY);
+        DrawRectangleRec(level3Btn, selectedLevel == 3 ? RED : GRAY);
 
+        // Button labels
         DrawText("LEVEL 1", level1Btn.x + 50, level1Btn.y + 15, 20, BLACK);
         DrawText("LEVEL 2", level2Btn.x + 50, level2Btn.y + 15, 20, BLACK);
         DrawText("LEVEL 3", level3Btn.x + 50, level3Btn.y + 15, 20, BLACK);
 
+        // Instructions
         DrawText("Use ARROW KEYS to select, ENTER to confirm, ESC to exit",
             SCREEN_WIDTH / 2 - MeasureText("Use ARROW KEYS to select, ENTER to confirm, ESC to exit", 20) / 2,
             500, 20, LIGHTGRAY);
@@ -439,12 +463,14 @@ public:
                     case 'J':
                         if (player.canAfford(50)) {
                             newTower = new JoelTower({ (float)gridX, (float)gridY });
+                            audio.playTowerPlace();
                             player.deductCoins(50);
                         }
                         break;
                     case 'E':
                         if (player.canAfford(30)) {
                             newTower = new EllieTower({ (float)gridX, (float)gridY });
+                            audio.playTowerPlace();
                             player.deductCoins(30);
                         }
                         break;
@@ -481,6 +507,7 @@ public:
         if (gameOver) {
             endWave();
             enemies.clear();
+            audio.playGameOver();
             currentState = GAME_OVER;
         }
 
@@ -538,6 +565,7 @@ public:
         if (IsKeyPressed(KEY_ONE)) {
             if (selectedTowerForUpgrade->canUpgrade(1, &player)) {
                 player.deductCoins(selectedTowerForUpgrade->getUpgradeCost(1));
+                audio.playSell();
                 selectedTowerForUpgrade->upgradePath1();
             }
         }
@@ -545,7 +573,20 @@ public:
         if (IsKeyPressed(KEY_TWO)) {
             if (selectedTowerForUpgrade->canUpgrade(2, &player)) {
                 player.deductCoins(selectedTowerForUpgrade->getUpgradeCost(2));
+                audio.playSell();
                 selectedTowerForUpgrade->upgradePath2();
+            }
+        }
+
+        if (IsKeyPressed(KEY_S)) {
+            if (player.sellTower(selectedTowerForUpgrade)) {
+                player.addCoins((float)(selectedTowerForUpgrade->getCost()) * 0.5);
+                Position pos = selectedTowerForUpgrade->getPosition();
+                map.getCell(pos.x, pos.y).removeTower();
+
+                selectedTowerForUpgrade = nullptr;
+
+                audio.playSell();
             }
         }
 

@@ -142,6 +142,7 @@
     <ClInclude Include="JoelTower.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="Tower.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

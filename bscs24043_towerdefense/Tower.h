@@ -41,6 +41,16 @@ public:
     void resetPlayer() {
         towers.clear();
     }
+
+    bool sellTower(Tower* towerToSell) {
+        for (int i = 0; i < towers.getSize(); i++) {
+            if (towers[i] == towerToSell) {
+                towers.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
 };
 
 
@@ -63,7 +73,7 @@ protected:
 
     void drawBaseInfoPanel(Vector2 mousePos, const char* towerName, bool u1Unlocked, bool u2Unlocked) const {
         float panelWidth = 250;
-        float panelHeight = (level <= maxLevel) ? 130 : 80;
+        float panelHeight = (level <= maxLevel) ? 150 : 100;
         float panelX = min(mousePos.x + 15, SCREEN_WIDTH - panelWidth - 5);
         float panelY = min(mousePos.y - panelHeight - 10, SCREEN_HEIGHT - panelHeight - 5);
 
@@ -74,14 +84,16 @@ protected:
         DrawText(TextFormat("Damage: %d", damage), panelX + 10, panelY + 35, 18, LIGHTGRAY);
         DrawText(TextFormat("Range: %d", range), panelX + 10, panelY + 55, 18, LIGHTGRAY);
 
+        DrawText(TextFormat("[S] Sell: %dg", (int)(getCost() * 0.5f)), panelX + 10, panelY + 75, 18, RED);
+
         if (level < maxLevel) {
             DrawText(TextFormat("1. %s (%dg)", upgrade1Name.c_str(), getUpgradeCost(1)),
-                panelX + 10, panelY + 80, 18, u1Unlocked ? GRAY : RED);
+                panelX + 10, panelY + 100, 18, u1Unlocked ? GRAY : RED);
             DrawText(TextFormat("2. %s (%dg)", upgrade2Name.c_str(), getUpgradeCost(2)),
-                panelX + 10, panelY + 100, 18, u2Unlocked ? GRAY : RED);
+                panelX + 10, panelY + 120, 18, u2Unlocked ? GRAY : RED);
         }
         if (level == maxLevel) {
-            DrawText("Fully Upgraded", panelX + 10, panelY + 85, 18, RED);
+            DrawText("Fully Upgraded", panelX + 10, panelY + 105, 18, RED);
         }
     }
 
