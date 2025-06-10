@@ -13,10 +13,10 @@ public:
     SoundManager() {
         InitAudioDevice();
         // Load all sounds during construction
-        towerPlaceSound = LoadSound("sounds/place.wav");
-        enemyDeathSound = LoadSound("sounds/kill.wav");
-        sellSound = LoadSound("sounds/sell.wav");
-        gameoverSound = LoadSound("sounds/gameover.wav");
+        towerPlaceSound = LoadSound("resources/sounds/place.wav");
+        enemyDeathSound = LoadSound("resources/sounds/kill.wav");
+        sellSound = LoadSound("resources/sounds/sell.wav");
+        gameoverSound = LoadSound("resources/sounds/gameover.wav");
     }
 
     ~SoundManager() {

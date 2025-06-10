@@ -320,11 +320,11 @@ public:
         waveTimerRemaining(30.0f),
         showWaveTimer(false) {
 
-        clickerTexture = LoadTexture("sprites/clicker.png");
-        bloaterTexture = LoadTexture("sprites/bloater.png");
-        joelTowerTexture = LoadTexture("sprites/joel.png");
-        ellieTowerTexture = LoadTexture("sprites/ellie.png");
-        menuBackground = LoadTexture("sprites/menu2.png");
+        clickerTexture = LoadTexture("resources/sprites/clicker.png");
+        bloaterTexture = LoadTexture("resources/sprites/bloater.png");
+        joelTowerTexture = LoadTexture("resources/sprites/joel.png");
+        ellieTowerTexture = LoadTexture("resources/sprites/ellie.png");
+        menuBackground = LoadTexture("resources/sprites/menu2.png");
 
 
     }
@@ -400,18 +400,18 @@ public:
             switch (selectedLevel) {
             case 1:
                 player.setPlayer(10, 200);
-                map.load("maps/map1.txt");
+                map.load("resources/maps/map1.txt");
                 currentState = LEVEL_1;
 
                 break;
             case 2:
                 player.setPlayer(8, 150);
-                map.load("maps/map2.txt");
+                map.load("resources/maps/map2.txt");
                 currentState = LEVEL_2;
                 break;
             case 3:
                 player.setPlayer(5, 100);
-                map.load("maps/map3.txt");
+                map.load("resources/maps/map3.txt");
                 currentState = LEVEL_3;
                 break;
             }

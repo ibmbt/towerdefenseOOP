@@ -79,9 +79,9 @@ private:
 
 public:
     Map() {
-        grassTex = LoadTexture("sprites/grass.png");
-        pathTex = LoadTexture("sprites/path.png");
-        rockTex = LoadTexture("sprites/rock.png");
+        grassTex = LoadTexture("resources/sprites/grass.png");
+        pathTex = LoadTexture("resources/sprites/path.png");
+        rockTex = LoadTexture("resources/sprites/rock.png");
     }
 
     ~Map() {
