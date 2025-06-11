@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="bscs24043_towerdefense.cpp" />
     <ClCompile Include="Globals.cpp" />
+    <ClCompile Include="myString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bloater.h" />
@@ -137,10 +138,12 @@
     <ClInclude Include="dynamicArray.h" />
     <ClInclude Include="EllieTower.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Exceptions.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="JoelTower.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="myString.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="Tower.h" />

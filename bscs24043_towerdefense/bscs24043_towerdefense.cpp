@@ -12,7 +12,7 @@
 #include "Tower.h"
 #include "JoelTower.h"
 #include "EllieTower.h"
-#include <string>
+#include "myString.h"
 #include <cmath>
 
 

@@ -1,12 +1,13 @@
 #ifndef MAP_H
 #define MAP_H
 #include <fstream>
-#include <string>
+#include "myString.h"
 #include "dynamicArray.h"
 #include "Globals.h"
 #include "Position.h"
 #include "Cell.h"
 #include "raylib.h"
+#include "Exceptions.h"
 using namespace std;
 
 
@@ -90,25 +91,23 @@ public:
         UnloadTexture(rockTex);
     }
 
-    void load(const string& filename) {
+    void load(const String& filename) {
 
         grid.clear();
         path.clear();
         width = height = 0;
 
 
-        ifstream file(filename);
+        ifstream file(filename.c_str());
 
 
-        /*
         if (!file.is_open()) {
 
-            return;
+            throw FileNotFound();
         }
-        */
 
-        string line;
-        while (getline(file, line)) {
+        String line;
+        while (getline(file, line, '\n')) {
             DynamicArray<Cell> row;
             int x = 0;
             for (char c : line) {

@@ -9,6 +9,7 @@
 #include "Clicker.h"
 #include "Bloater.h"
 #include "SoundManager.h"
+#include "Exceptions.h"
 using namespace std;
 
 
@@ -26,6 +27,11 @@ private:
     float waveTimer;
     float waveDelay;
     int enemiesToSpawn;
+
+
+    String errorMessage = "";
+    float errorTimer = 0.0f;
+    bool showError = false;
 
 
     Tower* selectedTowerForUpgrade = nullptr;
@@ -397,23 +403,32 @@ public:
             selectedLevel = (selectedLevel - 2 + 3) % 3 + 1;
         }
         if (IsKeyPressed(KEY_ENTER)) {
-            switch (selectedLevel) {
-            case 1:
-                player.setPlayer(10, 200);
-                map.load("resources/maps/map1.txt");
-                currentState = LEVEL_1;
+            try {
 
-                break;
-            case 2:
-                player.setPlayer(8, 150);
-                map.load("resources/maps/map2.txt");
-                currentState = LEVEL_2;
-                break;
-            case 3:
-                player.setPlayer(5, 100);
-                map.load("resources/maps/map3.txt");
-                currentState = LEVEL_3;
-                break;
+                switch (selectedLevel) {
+                case 1:
+                    player.setPlayer(10, 200);
+                    map.load("resources/maps/map1.txt");
+                    currentState = LEVEL_1;
+
+                    break;
+                case 2:
+                    player.setPlayer(8, 150);
+                    map.load("resources/maps/map2.txt");
+                    currentState = LEVEL_2;
+                    break;
+                case 3:
+                    player.setPlayer(5, 100);
+                    map.load("resources/maps/map3.txt");
+                    currentState = LEVEL_3;
+                    break;
+                }
+            }
+
+            catch (const FileNotFound& e) {
+                // error handling via console printing
+                cout << e.getMessage().c_str() << endl;
+
             }
 
             currentWave = 1;
@@ -425,67 +440,96 @@ public:
 
 
     void handleInput() {
+        try {
 
-        Vector2 mousepos = GetMousePosition();
-        mousepos.y += 20;
-        Tower* hoveredTower = getTowerUnderMouse(mousepos);
+            Vector2 mousepos = GetMousePosition();
+            mousepos.y += 20;
+            Tower* hoveredTower = getTowerUnderMouse(mousepos);
 
-        for (int i = 0; i < player.getTowers().getSize(); i++) {
-            player.getTowers()[i]->setShowRange(false);
-        }
-
-        if (hoveredTower) {
-            hoveredTower->setShowRange(true);
-        }
-        selectedTowerForUpgrade = hoveredTower;
-        handleUpgradeInput();
-        selectedTowerForUpgrade = nullptr;
-
-        if (IsKeyDown(KEY_LEFT_ALT)) {
+            // Clear all range indicators
             for (int i = 0; i < player.getTowers().getSize(); i++) {
-                player.getTowers()[i]->setShowRange(true);
+                player.getTowers()[i]->setShowRange(false);
             }
-        }
 
-        if (IsKeyPressed(KEY_J)) SELECTED_TOWER = 'J';
-        if (IsKeyPressed(KEY_E)) SELECTED_TOWER = 'E';
+            // Show range for hovered tower
+            if (hoveredTower) {
+                hoveredTower->setShowRange(true);
+            }
+            selectedTowerForUpgrade = hoveredTower;
+            handleUpgradeInput();
+            selectedTowerForUpgrade = nullptr;
 
-        if (placementPhase) {
-
-            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-                Vector2 mousePos = GetMousePosition();
-                int gridX = mousePos.x / CELL_SIZE;
-                int gridY = (mousePos.y - UI_HEIGHT + 20) / CELL_SIZE;
-
-                if (map.getCell(gridX, gridY).isEmpty()) {
-                    Tower* newTower = nullptr;
-                    switch (toupper(SELECTED_TOWER)) {
-                    case 'J':
-                        if (player.canAfford(50)) {
-                            newTower = new JoelTower({ (float)gridX, (float)gridY });
-                            audio.playTowerPlace();
-                            player.deductCoins(50);
-                        }
-                        break;
-                    case 'E':
-                        if (player.canAfford(30)) {
-                            newTower = new EllieTower({ (float)gridX, (float)gridY });
-                            audio.playTowerPlace();
-                            player.deductCoins(30);
-                        }
-                        break;
-                    }
-                    if (newTower) {
-                        player.addTower(newTower);
-                        map.getCell(gridX, gridY).placeTower();
-                    }
+            // ALT key shows all temporarily
+            if (IsKeyDown(KEY_LEFT_ALT)) {
+                for (int i = 0; i < player.getTowers().getSize(); i++) {
+                    player.getTowers()[i]->setShowRange(true);
                 }
             }
 
+            // Handle tower selection
+            if (IsKeyPressed(KEY_J)) SELECTED_TOWER = 'J';
+            if (IsKeyPressed(KEY_E)) SELECTED_TOWER = 'E';
 
-            if (IsKeyPressed(KEY_SPACE)) {
-                startWave();
+            if (placementPhase) {
+
+                if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                    Vector2 mousePos = GetMousePosition();
+                    int gridX = mousePos.x / CELL_SIZE; // Use int, not float
+                    int gridY = (mousePos.y - UI_HEIGHT + 20) / CELL_SIZE;
+
+                    if (map.getCell(gridX, gridY).isEmpty()) {
+                        Tower* newTower = nullptr;
+                        switch (toupper(SELECTED_TOWER)) {
+                        case 'J':
+                            if (player.canAfford(50)) {
+                                newTower = new JoelTower({ (float)gridX, (float)gridY });
+                                audio.playTowerPlace();
+                                player.deductCoins(50);
+                            }
+                            else {
+                                throw InsufficientCoinsError();
+                            }
+                            break;
+                        case 'E':
+                            if (player.canAfford(30)) {
+                                newTower = new EllieTower({ (float)gridX, (float)gridY });
+                                audio.playTowerPlace();
+                                player.deductCoins(30);
+                            }
+                            else {
+                                throw InsufficientCoinsError();
+                            }
+                            break;
+                        }
+                        if (newTower) {
+                            player.addTower(newTower);
+                            map.getCell(gridX, gridY).placeTower();
+                        }
+                    }
+                    else {
+                        throw TowerPlacementError();
+                    }
+                }
+                
+
+
+                if (IsKeyPressed(KEY_SPACE)) {
+                    startWave();
+                }
             }
+
+        }
+        catch (const TowerPlacementError& e) {
+            cout << e.getMessage().c_str() << endl;
+            errorMessage = e.getMessage();
+            errorTimer = 1.0f;
+            showError = true;
+        }
+        catch (const InsufficientCoinsError& e) {
+            cout << e.getMessage().c_str() << endl;
+            errorMessage = e.getMessage();
+            errorTimer = 1.0f;
+            showError = true;
         }
     }
 
@@ -493,6 +537,12 @@ public:
     void update(float deltaTime) {
         if (gameOver) return;
         updateGameplay(deltaTime);
+        if (showError) {
+            errorTimer -= GetFrameTime();
+            if (errorTimer <= 0.0f) {
+                showError = false;
+            }
+        }
 
     }
 
@@ -502,6 +552,26 @@ public:
 
         drawUI();
         drawGame();
+
+        if (showError) {
+            int padding = 10;
+            int fontSize = 20;
+
+            const char* msg = errorMessage.c_str();
+            int textWidth = MeasureText(msg, fontSize);
+            int boxWidth = textWidth + 2 * padding;
+            int boxHeight = fontSize + 2 * padding;
+
+            int screenWidth = GetScreenWidth();
+            int screenHeight = GetScreenHeight();
+
+            int boxX = screenWidth - boxWidth - 20;
+            int boxY = screenHeight - boxHeight - 20;
+
+            DrawRectangle(boxX, boxY, boxWidth, boxHeight, Fade(RED, 0.6f));
+            DrawRectangleLines(boxX, boxY, boxWidth, boxHeight, BLACK);
+            DrawText(msg, boxX + padding, boxY + padding, fontSize, WHITE);
+        }
 
 
         if (gameOver) {
@@ -563,31 +633,37 @@ public:
     void handleUpgradeInput() {
 
         if (IsKeyPressed(KEY_ONE)) {
-            if (selectedTowerForUpgrade->canUpgrade(1, &player)) {
-                player.deductCoins(selectedTowerForUpgrade->getUpgradeCost(1));
-                audio.playSell();
-                selectedTowerForUpgrade->upgradePath1();
+            if (selectedTowerForUpgrade) {
+                if (selectedTowerForUpgrade->canUpgrade(1, &player)) {
+                    player.deductCoins(selectedTowerForUpgrade->getUpgradeCost(1));
+                    audio.playSell();
+                    selectedTowerForUpgrade->upgradePath1();
+                }
             }
+           
         }
 
         if (IsKeyPressed(KEY_TWO)) {
-            if (selectedTowerForUpgrade->canUpgrade(2, &player)) {
-                player.deductCoins(selectedTowerForUpgrade->getUpgradeCost(2));
-                audio.playSell();
-                selectedTowerForUpgrade->upgradePath2();
+            if (selectedTowerForUpgrade) {
+                if (selectedTowerForUpgrade->canUpgrade(2, &player)) {
+                    player.deductCoins(selectedTowerForUpgrade->getUpgradeCost(2));
+                    audio.playSell();
+                    selectedTowerForUpgrade->upgradePath2();
+                }
             }
+            
         }
 
         if (IsKeyPressed(KEY_S)) {
-            if (player.sellTower(selectedTowerForUpgrade)) {
-                player.addCoins((float)(selectedTowerForUpgrade->getCost()) * 0.5);
-                Position pos = selectedTowerForUpgrade->getPosition();
-                map.getCell(pos.x, pos.y).removeTower();
-
-                selectedTowerForUpgrade = nullptr;
-
-                audio.playSell();
-            }
+            if (selectedTowerForUpgrade) {
+                if (player.sellTower(selectedTowerForUpgrade)) {
+                    player.addCoins((float)(selectedTowerForUpgrade->getCost()) * 0.5);
+                    Position pos = selectedTowerForUpgrade->getPosition();
+                    map.getCell(pos.x, pos.y).removeTower();
+                    selectedTowerForUpgrade = nullptr;
+                    audio.playSell();
+                }
+            }            
         }
 
     }

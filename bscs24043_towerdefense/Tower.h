@@ -3,6 +3,7 @@
 #include "Globals.h"
 #include "Position.h"
 #include "dynamicArray.h"
+#include "myString.h"
 #include "Enemy.h"
 using namespace std;
 
@@ -68,8 +69,8 @@ protected:
 
     int level;
     int maxLevel;
-    string upgrade1Name;
-    string upgrade2Name;
+    String upgrade1Name;
+    String upgrade2Name;
 
     void drawBaseInfoPanel(Vector2 mousePos, const char* towerName, bool u1Unlocked, bool u2Unlocked) const {
         float panelWidth = 250;
