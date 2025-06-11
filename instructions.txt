@@ -1,0 +1,30 @@
+Menu:
+3 stages, use arow keys to navigate and enter to selct stages.
+each stage has different maps and starting resources.
+
+Game Keybindings:
+2 Towers Joel and Ellie
+Press either [J] or [E] to select one of them
+selected is shown on top of screen in text
+place my clicking on the grass block (Green)
+can not place if:
+    - can not afford Tower
+    - on blocked path (grey block)
+    - on enemy path (Brown block)
+    - there is already tower on block
+
+hover over tower with mouse to prompt info of tower and show tower range
+press [ALT] to show all towers range 
+Hover Options:
+    - press [S] when hovering to sell tower for 50% of baseprice
+    - press [1] or [2] to upgrade Tower
+    - can upgrade tower maximum of 2 times
+
+Enemies:
+    - Clickers are fast with low hp
+    - Clickers will do 1 hp damage
+    - Bloaters are slow but high hp
+    - Bloaters do 2 hp damage
+
+Restart:
+    - if dead or level completed press [M] to show menu again and select levels again
