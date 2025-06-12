@@ -85,37 +85,31 @@ C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdef
 C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\EllieTower.h(25,18): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(265,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(266,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(265,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(266,39): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(268,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'bscs24043_towerdefense.cpp')
-  
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(268,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'bscs24043_towerdefense.cpp')
-  
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(268,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'bscs24043_towerdefense.cpp')
-  
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(269,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(269,52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
 C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(269,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(307,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(269,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'bscs24043_towerdefense.cpp')
+  
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(270,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'bscs24043_towerdefense.cpp')
+  
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(270,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
 C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(308,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(387,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'bscs24043_towerdefense.cpp')
-  
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(387,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(309,19): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
 C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(388,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -130,25 +124,31 @@ C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdef
 C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(389,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(484,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(390,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(485,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(390,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(632,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(490,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(631,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(491,31): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(669,81): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(638,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(671,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(637,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
-C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(671,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(675,81): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'bscs24043_towerdefense.cpp')
+  
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(677,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  (compiling source file 'bscs24043_towerdefense.cpp')
+  
+C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Game.h(677,36): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'bscs24043_towerdefense.cpp')
   
 C:\Users\ibrah\OneDrive\Desktop\Kehale\ITUniversity\sem2\objectoriented\towerdefenseOOP\bscs24043_towerdefense\Tower.h(172,1): warning C4715: 'Tower::getUpgradeCost': not all control paths return a value

@@ -17,7 +17,8 @@ using namespace std;
 
 class Game {
 private:
-    Player player;
+    Player player; // for multiplayer do player[n] or DynamicArray<Player> player and push players
+                   // you would need loop to perform actions to all players instead of only one
     Map map;
     DynamicArray<Enemy*> enemies;
     bool gameOver;

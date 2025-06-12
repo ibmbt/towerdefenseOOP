@@ -13,3 +13,12 @@
 [2025-06-12 01:53:34] NewState	INFO: Level 2 starts
 [2025-06-12 01:53:37] Placement	ERROR: Error: Cannot place tower here!
 [2025-06-12 01:54:10] System	INFO: Game shutdown
+
+=== NEW SESSION ===
+[2025-06-12 23:25:38] System	INFO: Game initialized
+[2025-06-12 23:25:40] NewState	INFO: Level 3 starts
+[2025-06-12 23:25:42] Placement	ERROR: Cannot place tower here!
+[2025-06-12 23:25:57] Placement	ERROR: Cannot place tower here!
+[2025-06-12 23:25:58] LowFunds	ERROR: Not enough coins for this action!
+[2025-06-12 23:25:59] LowFunds	ERROR: Not enough coins for this action!
+[2025-06-12 23:26:00] System	INFO: Game shutdown
