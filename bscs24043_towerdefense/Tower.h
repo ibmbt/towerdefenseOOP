@@ -156,6 +156,7 @@ public:
     int getCost() const { return cost; }
     int getRange() const { return range; }
     int getDamage() const { return damage; }
+    int getLevel() const { return level; }
 
     virtual void upgradePath1() = 0;
     virtual void upgradePath2() = 0;

@@ -10,6 +10,7 @@
 #include "Bloater.h"
 #include "SoundManager.h"
 #include "Exceptions.h"
+#include "Logger.h"
 using namespace std;
 
 
@@ -403,6 +404,7 @@ public:
             selectedLevel = (selectedLevel - 2 + 3) % 3 + 1;
         }
         if (IsKeyPressed(KEY_ENTER)) {
+            String level = "";
             try {
 
                 switch (selectedLevel) {
@@ -410,25 +412,30 @@ public:
                     player.setPlayer(10, 200);
                     map.load("resources/maps/map1.txt");
                     currentState = LEVEL_1;
-
+                    level = "Level 1";
                     break;
                 case 2:
                     player.setPlayer(8, 150);
                     map.load("resources/maps/map2.txt");
                     currentState = LEVEL_2;
+                    level = "Level 2";
                     break;
                 case 3:
                     player.setPlayer(5, 100);
                     map.load("resources/maps/map3.txt");
                     currentState = LEVEL_3;
+                    level = "Level 3";
                     break;
                 }
+                Logger::getInstance()->log(
+                    "NewState",
+                    String(level + " starts ")
+                );
             }
 
             catch (const FileNotFound& e) {
-                // error handling via console printing
                 cout << e.getMessage().c_str() << endl;
-
+                Logger::getInstance()->log("FileSystem", e.getMessage(), "ERROR");
             }
 
             currentWave = 1;
@@ -474,6 +481,11 @@ public:
 
                 if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
                     Vector2 mousePos = GetMousePosition();
+
+                    if (mousePos.y + 20 < UI_HEIGHT) {
+                        throw TowerPlacementError();
+                    }
+
                     int gridX = mousePos.x / CELL_SIZE; // Use int, not float
                     int gridY = (mousePos.y - UI_HEIGHT + 20) / CELL_SIZE;
 
@@ -521,12 +533,14 @@ public:
         }
         catch (const TowerPlacementError& e) {
             cout << e.getMessage().c_str() << endl;
+            Logger::getInstance()->log("Placement", e.getMessage(), "ERROR");
             errorMessage = e.getMessage();
             errorTimer = 1.0f;
             showError = true;
         }
         catch (const InsufficientCoinsError& e) {
             cout << e.getMessage().c_str() << endl;
+            Logger::getInstance()->log("LowFunds", e.getMessage(), "ERROR");
             errorMessage = e.getMessage();
             errorTimer = 1.0f;
             showError = true;

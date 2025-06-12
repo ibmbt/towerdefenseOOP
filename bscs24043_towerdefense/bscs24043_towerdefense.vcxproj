@@ -142,6 +142,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Globals.h" />
     <ClInclude Include="JoelTower.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="myString.h" />
     <ClInclude Include="Position.h" />

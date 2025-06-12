@@ -5,7 +5,7 @@
 class FileNotFound {
     String message;
 public:
-    FileNotFound() : message("Error: File not found!") {}
+    FileNotFound() : message("File not found!") {}
 
     String getMessage() const {
         return message;
@@ -15,7 +15,7 @@ public:
 class InsufficientCoinsError {
     String message;
 public:
-    InsufficientCoinsError() : message("Error: Not enough coins for this action!") {}
+    InsufficientCoinsError() : message("Not enough coins for this action!") {}
 
     String getMessage() const {
         return message;
@@ -25,7 +25,7 @@ public:
 class TowerPlacementError {
     String message;
 public:
-    TowerPlacementError() : message("Error: Cannot place tower here!") {}
+    TowerPlacementError() : message("Cannot place tower here!") {}
 
     String getMessage() const {
         return message;
