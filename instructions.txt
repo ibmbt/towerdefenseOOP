@@ -1,3 +1,7 @@
+GameSaves:
+    - press [F5] after wave ends to save game.
+    - press [F9] when you start new game to load last game from bin file
+
 Menu:
 3 stages, use arow keys to navigate and enter to selct stages.
 each stage has different maps and starting resources.
