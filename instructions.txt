@@ -32,3 +32,4 @@ Enemies:
 
 Restart:
     - if dead or level completed press [M] to show menu again and select levels again
+    - press [ESC] to shutdown
