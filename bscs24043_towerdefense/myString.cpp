@@ -545,3 +545,6 @@ void String::save(ofstream& wtr) {
         wtr << this->str[i];
     }
 }
+int String::getLen() const {
+    return len;
+}

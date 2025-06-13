@@ -63,6 +63,7 @@ public:
     void loadMyfile(std::ifstream& rdr, const char chr);
     friend ifstream& getline(std::ifstream& fin, String& str, const char ch);
     void save(std::ofstream& wtr);
+    int getLen() const;
     ~String();
 };
 #endif 

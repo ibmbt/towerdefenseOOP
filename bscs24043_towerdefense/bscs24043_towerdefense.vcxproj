@@ -146,6 +146,7 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="myString.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="SaveLoad.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="Tower.h" />
   </ItemGroup>

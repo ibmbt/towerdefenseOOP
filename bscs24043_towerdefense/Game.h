@@ -11,6 +11,7 @@
 #include "SoundManager.h"
 #include "Exceptions.h"
 #include "Logger.h"
+#include "SaveLoad.h"
 using namespace std;
 
 
@@ -436,7 +437,7 @@ public:
 
             catch (const FileNotFound& e) {
                 cout << e.getMessage().c_str() << endl;
-                Logger::getInstance()->log("FileSystem", e.getMessage(), "ERROR");
+                Logger::getInstance()->log("FileMiss", e.getMessage(), "ERROR");
             }
 
             currentWave = 1;
@@ -524,7 +525,15 @@ public:
                     }
                 }
                 
+                if (IsKeyPressed(KEY_F5)) {
+                    SaveLoad::saveGame("gamesaves/save.bin", currentState, currentWave, player);
 
+                }
+
+                if (IsKeyPressed(KEY_F9)) {
+                    SaveLoad::loadGame("gamesaves/save.bin", currentState, currentWave, player, map);
+
+                }
 
                 if (IsKeyPressed(KEY_SPACE)) {
                     startWave();
@@ -532,6 +541,12 @@ public:
             }
 
         }
+
+        catch (const FileNotFound& e) {
+            cout << e.getMessage().c_str() << endl;
+            Logger::getInstance()->log("FileMiss", e.getMessage(), "ERROR");
+        }
+
         catch (const TowerPlacementError& e) {
             cout << e.getMessage().c_str() << endl;
             Logger::getInstance()->log("Placement", e.getMessage(), "ERROR");

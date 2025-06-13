@@ -92,17 +92,12 @@ public:
     }
 
     void load(const String& filename) {
-
         grid.clear();
         path.clear();
         width = height = 0;
 
-
         ifstream file(filename.c_str());
-
-
         if (!file.is_open()) {
-
             throw FileNotFound();
         }
 
@@ -110,7 +105,8 @@ public:
         while (getline(file, line, '\n')) {
             DynamicArray<Cell> row;
             int x = 0;
-            for (char c : line) {
+            for (int i = 0; i < line.getLen(); i++) {
+                char c = line[i];
                 row.push(Cell(x, height, c));
                 x++;
             }
